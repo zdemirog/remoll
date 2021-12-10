@@ -7,7 +7,7 @@
 
 <gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
 
-<define>
+  <define>
     &matrices;
 
     <constant name="PI" value="1.*pi"/>
@@ -72,9 +72,9 @@
     <position name="bellows5flangeUS_pos" z="bellows5flangeUS_zpos" unit="mm"/>
     <position name="bellows5flangeDS_pos" z="bellows5flangeDS_zpos" unit="mm"/>
 
-</define>
+  </define>
 
-&materials;
+  &materials;
 
 <solids>
 
@@ -193,6 +193,7 @@
     <!--collar solids -->
     <cone name="solidCollar1" lunit="mm" aunit="rad" startphi="0" deltaphi="2*pi" rmin1="612" rmax1="750" rmin2="621" rmax2="750" z="100+50"/>
     <!--<cone name="solidCollar2" lunit="mm" aunit="rad" startphi="0" deltaphi="2*pi" rmin1="1013" rmax1="1315" rmin2="1022" rmax2="1315" z="100+50"/>-->
+
 
     <!-- drift pipe -->
     <polycone aunit="deg" startphi="0" deltaphi="360" lunit="mm" name="solid_Driftpipe">
@@ -415,19 +416,14 @@
 
       <physvol name="Driftpipe">
         <volumeref ref="logicDriftpipe"/>
-	    <position name="Driftpipe_pos" x="0" y="0" z="12854.94 - 11287.5"/>
+	<position name="Driftpipe_pos" x="0" y="0" z="12854.94 - 11287.5"/>
       </physvol>
       
       <physvol name="Driftpipe_vacuum">
         <volumeref ref="logicDriftpipe_vacuum"/>
         <position name="Driftpipe_vacuum_pos" x="0" y="0" z="18689.32 - 11287.5"/>
       </physvol>
-      <!--
-	  <physvol name="DStracker">
-          <volumeref ref="logicDSTracker"/>
-          <position name="DStracker_pos" unit="mm" x="0" y="0" z="0"/>
-	  </physvol>
-      -->
+
       <!--add bellows G4_STAINLESS-STEEL and custom bellows SS material  -->
       <physvol name="bellows3physical_phys">
         <volumeref ref="bellows3physical_log"/>
