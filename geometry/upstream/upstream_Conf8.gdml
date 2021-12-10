@@ -41,7 +41,7 @@
 
     <!--<tube aunit="deg" deltaphi="360" lunit="mm" name="dsBarite_solid" rmin="541" rmax="1200" z="500 - 86"/>-->
     <box lunit="mm" name="dsBarite_solid_1" x="1200*2" y="1200*2" z="500 - 86 "/>
-    <box lunit="mm" name="dsBarite_solid_2" x="550*2+1-20" y="550*2+1-20" z="500 - 86 + 1"/>
+    <box lunit="mm" name="dsBarite_solid_2" x="550*2+1-100" y="550*2+1-100" z="500 - 86 + 1"/>
     <subtraction name="dsBarite_solid">
       <first ref = "dsBarite_solid_1"/>
       <second ref = "dsBarite_solid_2"/>
@@ -131,7 +131,7 @@
       <!--shielding placement-->
       <physvol name="coll1TopShielding">
         <volumeref ref="coll1TopShield_logic"/>
-        <position name="coll1TopShield_pos" unit="mm" x="0" y="915.67 + 1400/2 - 10 + 13.43" z="1287.5-250/2 - 2000 + 86/2 - 186/2"/>
+        <position name="coll1TopShield_pos" unit="mm" x="0" y="915.67 + 1400/2 - 10 + 13.43 + 1" z="1287.5-250/2 - 2000 + 86/2 - 186/2"/>
       </physvol>
 
       <physvol name="coll1LeftShielding">
@@ -151,17 +151,17 @@
       
       <physvol>
 	<volumeref ref="DSconcreteShielding"/>
-	<position name="DSconcreteShielding_pos" unit="mm" x="0" y="-420 + 127.65/2 + 18 + 12.43/2" z="4005-250/2- 2000 + 86/2 - 186/2"/>
+	<position name="DSconcreteShielding_pos" unit="mm" x="0" y="-420 + 127.65/2 + 18 + 12.43/2" z="4005-250/2- 2000 + 86/2 - 186/2 + 1"/>
       </physvol>
 
       <physvol name="dsBarite">
 	<volumeref ref="dsBarite_logic"/>
-	<position name="dsBarite_pos" unit="mm" x="0" y="0" z="4005-250/2 - 2000 + 86/2"/>
+	<position name="dsBarite_pos" unit="mm" x="0" y="0" z="4005-250/2 - 2000 + 86/2 + 1"/>
       </physvol>
 
       <physvol name="dsBarite2">
         <volumeref ref="dsBarite2_logic"/>
-        <position name="dsBarite2_pos" unit="mm" x="0" y="0" z="1665+48-186/2+2.7"/>
+        <position name="dsBarite2_pos" unit="mm" x="0" y="0" z="1665 + 48 - 186/2 + 2.7 + 1"/>
       </physvol>
 
       <physvol>

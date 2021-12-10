@@ -139,7 +139,7 @@
      
      
      <box lunit="mm" name="tubeUpstream_1" x="550*2" y="550*2" z="USBoxmother_length"/>
-     <box lunit="mm" name="tubeUpstream_2" x="550*2+1" y="550*2+1" z="USBoxmothersubtract_length - 610 - 500 + 414 + 4+1"/>
+     <box lunit="mm" name="tubeUpstream_2" x="550*2+1" y="550*2+1" z="USBoxmothersubtract_length - 610 - 500 + 414 + 4 + 2.05"/>
 
      <!-- <tube aunit="deg" deltaphi="360" lunit="mm" name="tubeUpstream_1" rmax="550" rmin="0" startphi="0" z="USBoxmother_length"/>
       <tube aunit="deg" deltaphi="360" lunit="mm" name="tubeUpstream_2" rmax="550+1" rmin="0" startphi="0" z="USBoxmothersubtract_length - 610 - 500 + 414 + 4"/>-->
