@@ -64,7 +64,7 @@
     <constant name="USBoxmother_length" value="6500+USBoxmother_extensionUS"/>
 
     <constant name="USBoxmothersubtract_length" value="2225+(USBoxmother_extensionUS)/2"/>
-    <position name="USmothersubtract_center_2" unit="mm" x="0" y="0" z="USBoxmother_length/2 - USBoxmothersubtract_length/2 + 610/2 + 500/2"/>
+    <position name="USmothersubtract_center_2" unit="mm" x="0" y="0" z="USBoxmother_length/2 - USBoxmothersubtract_length/2 + 610/2 + 500/2 - 414/2 - 4/2"/>
 
     <!--need to subtract 50/2 to accomdate for the beampipe moving downstream due to collimator thickness increasing. An additional 75 mm subtracted to move the beampipe upstream.-->
     <position name="shield_US_beampipe_center" unit="mm" x="0" y="0" 
@@ -137,8 +137,12 @@
 
   <solids>
      
-      <tube aunit="deg" deltaphi="360" lunit="mm" name="tubeUpstream_1" rmax="550" rmin="0" startphi="0" z="USBoxmother_length"/>
-      <tube aunit="deg" deltaphi="360" lunit="mm" name="tubeUpstream_2" rmax="550+1" rmin="0" startphi="0" z="USBoxmothersubtract_length - 610 - 500"/>
+     
+     <box lunit="mm" name="tubeUpstream_1" x="550*2" y="550*2" z="USBoxmother_length"/>
+     <box lunit="mm" name="tubeUpstream_2" x="550*2+1" y="550*2+1" z="USBoxmothersubtract_length - 610 - 500 + 414 + 4+1"/>
+
+     <!-- <tube aunit="deg" deltaphi="360" lunit="mm" name="tubeUpstream_1" rmax="550" rmin="0" startphi="0" z="USBoxmother_length"/>
+      <tube aunit="deg" deltaphi="360" lunit="mm" name="tubeUpstream_2" rmax="550+1" rmin="0" startphi="0" z="USBoxmothersubtract_length - 610 - 500 + 414 + 4"/>-->
       <subtraction name="tubeUpstream">
         <first ref="tubeUpstream_1"/>
         <second ref="tubeUpstream_2"/>
@@ -393,8 +397,15 @@
       <rotation name="pdscoll_rot7" x="0" y="0" z="SEPTANT*(6+0.5)" unit="deg"/>
     </subtraction>
     
-    <tube aunit="deg" deltaphi="360" lunit="mm" name="vacuumPbWall_solid" 
-	  rmax="550" rmin="219" startphi="0" z="102"/>
+    <!--<tube aunit="deg" deltaphi="360" lunit="mm" name="vacuumPbWall_solid"
+	  rmax="550" rmin="219" startphi="0" z="102+250-15"/>-->
+    <box lunit="mm" name="vacuumPbWall_1" x="550*2" y="550*2" z="150"/>
+    <tube aunit="deg" deltaphi="360" lunit="mm" name="vacuumPbWall_2" rmax="219" rmin="0" startphi="0" z="150+1"/>
+    <subtraction name ="vacuumPbWall_solid">
+      <first ref="vacuumPbWall_1"/>
+      <second ref="vacuumPbWall_2"/>
+      <position name ="vacuumPbWall_p" lunit="mm" x="0" y="0" z="0" />
+    </subtraction>
   </solids>
 
   <structure>
@@ -495,15 +506,15 @@
       <solidref ref="tubeUpstream"/>
 
       <!-- Lead wall DS of collimator 4 -->
-      <physvol name="hybridPbWall">
+      <!-- <physvol name="hybridPbWall">
         <volumeref ref="boxDSShield_local_logic"/>
         <position name="hybridPbWall_pos" x="0" y="0" z="2005"/>
-      </physvol>
+      </physvol>-->
 
       <!-- mini - Lead wall DS of collimator 4 -->
       <physvol name="vacuumPbWall">
         <volumeref ref="vacuumPbWall_logic"/>
-        <position name="vacuumPbWall_pos" x="0" y="0" z="1665"/>
+        <position name="vacuumPbWall_pos" x="0" y="0" z="1665-48/2"/>
       </physvol>
       
       <physvol name="collimator1">
