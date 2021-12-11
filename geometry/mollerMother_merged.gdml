@@ -345,7 +345,7 @@
 	<positionref ref="showerMaxDetectorCenter"/>
       </physvol>
       
-      >>>>>>> zuhalFork/feature-target-shield-design
+      <!-->>>>>>> zuhalFork/feature-target-shield-design-->
       <!-- Pion Detectors -->
       <!-- <physvol> -->
       <!--   <file name="pion/pionDetectorSystem.gdml"/> -->
