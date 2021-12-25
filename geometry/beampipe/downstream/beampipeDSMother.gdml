@@ -20,8 +20,8 @@
     <polycone name="solid_DSbeampipe_vacuum"
               aunit="deg" startphi="0" deltaphi="360"
               lunit="mm">
-      <zplane rmin="0" rmax="1019" z="19332.69"/>-->
-      <zplane rmin="0" rmax="600" z="19332.69"/>
+      <zplane rmin="0" rmax="1019" z="19332.69+0.02"/>
+      <zplane rmin="0" rmax="600" z="19332.69+0.02"/>
       <zplane rmin="0" rmax="770" z="26500.0"/>
     </polycone>
 
