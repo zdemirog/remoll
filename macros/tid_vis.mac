@@ -2,7 +2,9 @@
 /vis/open OGL 600x600-0+0  
 
 # This is the current working geometry
-/remoll/setgeofile geometry/tid.gdml
+#/remoll/setgeofile geometry/tid.gdml
+/remoll/setgeofile geometry/topwall.gdml
+/remoll/parallel/setfile
 
 #/remoll/setphysicslist QGSP_BERT_EMV
 

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<gdml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://service-spi.web.cern.ch/service-spi/app/releases/GDML/schema/gdml.xsd">
+
+  <define> 
+
+     <constant name="dump_wall_thickness" value="12.0*25.4"/>
+     <constant name="dump_height" value="120.*25.4 + 2.*dump_wall_thickness"/>
+     <constant name="dumpDSSub_height2" value="36.*25.4 + 0.1"/>
+     <constant name="dump_floor_distance_beam" value="(dump_height - 2.*dump_wall_thickness - dumpDSSub_height2)/2 + dumpDSSub_height2"/>
+     <constant name="radius_of_cylwall" value="26517.6"/>
+     <constant name="thick_cylwall" value="1559.4"/>
+     <constant name="height_cylwall" value="14847.4"/>    
+     <constant name="dump_width" value="84.*25.4 + 2.*dump_wall_thickness"/>
+     <constant name="dump_length" value="1200.*25.4 + 1.*dump_wall_thickness"/>
+     <constant name="hall_cylwall_radius" value="radius_of_cylwall/10"/> 
+     <constant name="dump_center_y" value="dump_height/2 - dump_wall_thickness - dump_floor_distance_beam"/>
+
+  </define>
+
+  <materials>
+
+  <!--Hydrogen-->
+
+    <isotope name="H1" Z="1" N="1">
+     <atom type="A" value="1.01"/>
+    </isotope>
+
+    <isotope name="H2" Z="1" N="2">
+     <atom type="A" value="2.01"/>
+    </isotope>
+  
+   <element Z="1" formula="H" name="H" >
+    <fraction ref="H1" n="0.9999" />
+    <fraction ref="H2" n="0.0001" />
+   </element>
+
+  <!--Oxygen-->
+
+   <isotope name="O16" Z="8" N="16">
+    <atom type="A" value="15.99"/>
+  </isotope>
+ 
+   <isotope name="O17" Z="8" N="17">
+    <atom type="A" value="17.00"/>
+   </isotope>
+
+  <isotope name="O18" Z="8" N="18">
+    <atom type="A" value="18.00"/>
+  </isotope>
+  
+  <element Z="8" formula="O" name="O" >
+    <fraction ref="O16" n="0.9976" />
+    <fraction ref="O17" n="0.0004" />
+    <fraction ref="O18" n="0.0020" />
+  </element>
+
+  <!--Water-->
+
+    <material name="Water" formula="H2O">
+      <D value="1.0" unit="g/cm3"/>
+      <composite n="2" ref="H"/>
+      <composite n="1" ref="O"/>
+    </material>
+
+ <!--Silicon-->
+  
+   <isotope name="Si28" Z="14" N="28">
+    <atom type="A" value="27.98"/>
+  </isotope>
+
+  <isotope name="Si29" Z="14" N="29">
+    <atom type="A" value="28.98"/>
+  </isotope>
+
+  <isotope name="Si30" Z="14" N="30">
+    <atom type="A" value="29.97"/>
+  </isotope>
+
+  <element Z="14" formula="Si" name="Si" >
+    <fraction ref="Si28" n="0.9223" />
+    <fraction ref="Si29" n="0.0468" />
+    <fraction ref="Si30" n="0.0309" />
+  </element>
+
+ <!--Silicon Dioxide-->
+
+    <material name="SiO2" formula="SiO2">
+      <D value="2.32" unit="g/cm3"/>
+      <composite n="2" ref="O"/>
+      <composite n="1" ref="Si"/>
+    </material>
+
+   <material name="Soil" formula="Soil">
+      <D value="2.0023" unit="g/cm3"/>
+      <fraction n="0.175" ref="Water"/>
+      <fraction n="0.825" ref="SiO2"/>
+    </material>
+
+ 
+
+  </materials>
+
+  <solids>
+
+    <box lunit="cm" name="world_solid"
+	 x="90000"
+	 y="90000"
+	 z="45000"/>  
+
+  <tube aunit="deg" startphi="0" deltaphi="360" lunit="mm" name="dirth_tube" rmin="0.0" 
+	rmax="80000" z="8050" />
+
+  <sphere aunit="deg" lunit="mm" name="dirth_sphere" rmin="0" rmax="79753.2" deltaphi="360" deltatheta="180"/>
+
+  <union name ="union_dirth">
+      <first ref="dirth_tube"/>
+      <second ref="dirth_sphere"/>
+      <position name="union_position" unit="mm" z="62052.6"/>
+  </union>
+
+ <tube aunit="deg" startphi="0" deltaphi="360" lunit="mm" name="Tube1" rmin="0.0"
+        rmax="79753.2+10" z="2*79753.2" />
+
+  <subtraction name ="sub_dirth">
+      <first ref="union_dirth"/>
+      <second ref="Tube1"/>
+      <position name="sub_dirth_pos" unit="mm" z="79753.2+4025"/>
+  </subtraction>
+
+ <sphere aunit="deg" lunit="mm" name="outer_shell_out" rmin="0" rmax="79753.2" deltaphi="360" deltatheta="180"/>
+
+ <sphere aunit="deg" lunit="mm" name="outer_shell_in" rmin="0" rmax="79753.2" deltaphi="360" deltatheta="180"/>
+
+ <subtraction name ="sub_outer_sphere">
+      <first ref="outer_shell_out"/>
+      <second ref="outer_shell_in"/>
+      <position name="outer_sphere_position" unit="mm" z="1000"/>
+ </subtraction>
+
+ <tube aunit="deg" startphi="0" deltaphi="360" lunit="mm" name="Tube2" rmin="0.0"
+        rmax="79753.2+10" z="2*79753.2" />
+
+  <subtraction name ="sub_solid_outer_sphere">
+      <first ref="sub_outer_sphere"/>
+      <second ref="Tube2"/>
+      <position name="subtraction_position2" unit="mm" z="5600.6"/>
+  </subtraction>
+
+  <subtraction name ="sub_outlayer">       <!-- Final Outlayer-->
+      <first ref="sub_dirth"/>
+      <second ref="sub_solid_outer_sphere"/>
+      <position name="subtraction_position3" unit="mm" z="62052.6"/>
+  </subtraction>
+
+ <box name="above_dump" unit="mm" x="17144" y="5800" z="28000"/>
+
+ <union name="sub_final_outlayer">
+  <first ref="sub_outlayer"/>
+  <second ref="above_dump"/>
+  <rotation name="above_dump_roation" unit="deg" x="90"/>
+  <position name="aove_dump_position" unit="mm" y="56000-4000" z="-4900"/>
+ </union> 
+
+   <sphere aunit="deg" startphi="0" deltaphi="360" starttheta="0" deltatheta="180" lunit="mm" name="hall_top_shell_outer"  
+	  rmin="0" rmax="73966.09"/>
+
+     <tube aunit="deg" startphi="0" deltaphi="360" lunit="mm" name="hall_top_sub" rmin="0.0" 
+	rmax="73966.09 + 10" z="2*73966.09" />  
+
+     <subtraction name ="topwall_solid">  <!--the spherical part of hall on the top-->
+      <first ref="hall_top_shell_outer"/>
+      <second ref="hall_top_sub"/>
+      <position name="tube_shift" unit="mm" z="5536.09+650"/>
+  </subtraction>
+
+  <tube aunit="deg" startphi="0" deltaphi="360" lunit="mm" name="out_cylwall" rmin="0.0" rmax="28077" z="height_cylwall" />  <!--Cylindrial surface of the wall-->
+
+  <box name="dump" unit="mm" x="dump_width" y="dump_height" z="dump_length"/>
+
+   <box name="dumpcov" unit="mm" x="11277.6" y="8640" z="17120"/>
+
+ <multiUnion name="hall_solid">
+
+   <multiUnionNode name ="node_sphere">
+   <solid ref="out_cylwall"/>
+   </multiUnionNode>
+
+  <multiUnionNode name="node_cylwall">
+   <solid ref="topwall_solid"/>
+   <position name="topwall_pos" unit="mm" z="73966.09-height_cylwall/2-5536.09-650+1"/>
+  </multiUnionNode>
+
+   <multiUnionNode name="node_dump">
+    <solid ref="dump"/>
+    <rotation name="dump_rotation" unit="deg" x="90"/> 
+    <position name="dump_pos" unit="mm" y="radius_of_cylwall + dump_length/2" z="dump_center_y+2953.7"/>
+  </multiUnionNode>
+
+   <multiUnionNode name="node_dumpcov">
+     <solid ref="dumpcov"/>
+     <rotation name="dumpcov_rotation" unit="deg" x="90"/>
+     <position name="dumpcov_pos" unit="mm"  y="44920+17120/2" z="dump_center_y+2953.7"/>
+  </multiUnionNode>
+
+  </multiUnion>
+
+</solids>
+
+<structure>
+    
+     <volume name="hall_logic">
+      <materialref ref="G4_AIR"/>
+      <solidref ref="hall_solid"/>
+      <auxiliary auxtype="Color" auxvalue="red"/>
+     </volume>
+   
+
+     <volume name="outlayer_logic">
+      <materialref ref="Soil"/>
+      <solidref ref="sub_final_outlayer"/>
+      <auxiliary auxtype="Color" auxvalue="blue"/>
+
+      <physvol name="Hall_PV">
+      	<volumeref ref="hall_logic"/>
+        <position name="hall_position" unit="mm" z="-3398.7+650"/>
+      </physvol>
+     
+     </volume>
+
+ 
+    <volume name="logicWorld">
+      <materialref ref="G4_AIR"/>
+      <solidref ref="world_solid"/>
+      <auxiliary auxtype="Alpha" auxvalue="0.1"/>
+
+      <physvol name="Dirth_PV">
+      	<volumeref ref="outlayer_logic"/>
+        <rotation name="union_rotation" unit="deg" x="-90"/>
+      </physvol>
+
+    </volume>
+  </structure>
+
+  <setup name="Default" version="1.0">
+    <world ref="logicWorld"/>
+  </setup>
+  
+</gdml> 
