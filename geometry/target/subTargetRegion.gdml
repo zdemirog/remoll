@@ -184,6 +184,10 @@
     <volume name="targetUSBeamPipe">
       <materialref ref="G4_Al"/>
       <solidref ref="targetUSBeamPipeOuter_solid"/>
+      <auxiliary auxtype="SensDet" auxvalue="PipeDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5529"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <physvol>
 	<volumeref ref="targetUSBeamPipeVacuum"/>
       </physvol>
@@ -205,13 +209,21 @@
       <materialref ref="Concrete"/>
       <solidref ref="concreteDS_sub"/>
       <auxiliary auxtype="Color" auxvalue="Green"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5533"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 
     <volume name="ConcreteShieldTop">
-      <materialref ref="barite"/>
+      <materialref ref="Concrete"/>
       <solidref ref="concreteTop_sub"/>
-      <auxiliary auxtype="Color" auxvalue="Brown"/>
+      <auxiliary auxtype="Color" auxvalue="Green"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5534"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 
@@ -219,6 +231,10 @@
       <materialref ref="Concrete"/>
       <solidref ref="concreteLeft"/>
       <auxiliary auxtype="Color" auxvalue="Green"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5528"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>    
 
@@ -226,6 +242,10 @@
       <materialref ref="Concrete"/>
       <solidref ref="concreteRight"/>
       <auxiliary auxtype="Color" auxvalue="Green"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5531"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
     
@@ -233,6 +253,10 @@
       <materialref ref="barite"/>
       <solidref ref="outerBarite_solid"/>
       <auxiliary auxtype="Color" auxvalue="Brown"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5532"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 	  
@@ -240,6 +264,10 @@
       <materialref ref="G4_STAINLESS-STEEL"/>
       <solidref ref="bellows1USflange_solid"/>
       <auxiliary auxtype="Color" auxvalue="Orange"/>
+      <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5535"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 	  
@@ -247,6 +275,10 @@
       <materialref ref="SSbellows"/>
       <solidref ref="bellows1_solid"/>
       <auxiliary auxtype="Color" auxvalue="Pink"/>
+      <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5536"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 
@@ -254,6 +286,10 @@
       <materialref ref="G4_Al"/>
       <solidref ref="tgt2US_pipe2_solid"/>
       <auxiliary auxtype="Color" auxvalue="blue"/>
+      <auxiliary auxtype="SensDet" auxvalue="tgtpipeDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5530"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 	  
@@ -261,6 +297,10 @@
       <materialref ref="G4_STAINLESS-STEEL"/>
       <solidref ref="tgt2US_pipe2_USflange_solid"/>
       <auxiliary auxtype="Color" auxvalue="Orange"/>
+      <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5537"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 	  
@@ -268,6 +308,10 @@
       <materialref ref="G4_Al"/>
       <solidref ref="tgt2US_pipe2_DSflange_solid"/>
       <auxiliary auxtype="Color" auxvalue="blue"/>
+      <auxiliary auxtype="SensDet" auxvalue="tgtpipeDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="5538"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 

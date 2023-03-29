@@ -69,7 +69,10 @@
     
   <box lunit="mm" name="skyshineVacuumDet2_solid"
        x="8690" y="1.0" z="6350"/>
-       
+     
+  <box lunit="mm" name="USTorusEnclosureFloor_solid"
+          x="1130.3+184.15*2" y="1.0" z="4267.19981+2"/>
+          
   <box lunit="mm" name="PSbunkerOuterFrontVP_solid"
        x="1" y="3429+2571" z="9512.3+9541.7"/>
        
@@ -231,6 +234,13 @@
     <auxiliary auxtype="DetNo" auxvalue="270"/>
   </volume>
 
+  <volume name="USTorusEnclosureFloor_log">
+    <materialref ref="G4_Galactic"/>
+    <solidref ref="USTorusEnclosureFloor_solid"/>
+    <auxiliary auxtype="Color" auxvalue="yellow"/>
+    <auxiliary auxtype="DetNo" auxvalue="5615"/>
+  </volume>
+  
   <volume name="Col2Ent_log">
     <materialref ref="G4_Galactic"/>
     <solidref ref="smallVirtualPlane_solid"/>
@@ -1078,7 +1088,12 @@
       <volumeref ref="sieveVirtualPlane_log"/>
       <position ref="sieveVirtualPlane_pos" unit="mm" z="105"/>
     </physvol>
-
+    
+    <physvol name="USTorusEnclosureFloor_phys">
+      <volumeref ref="USTorusEnclosureFloor_log"/>
+      <position ref="USTorusEnclosureFloor_pos" unit="mm" x="0" y="-600" z="-204.597+(3592.703+204.597)/2.0"/>
+    </physvol>
+    
     <physvol name="Col2Ent_phys">
       <volumeref ref="Col2Ent_log"/>
       <position name="Col2Ent_pos" unit="mm" x="0" y="0" z="750-0.5"/>
@@ -1565,8 +1580,8 @@
     <physvol name="Ring6Back_phys">
       <volumeref ref="Ring6Back_log"/>
       <position name="Ring6Back_pos" unit="mm" z="22198.00 - 230.22 + 21"/>
-    </physvol>
-    
+    </physvol>-->
+
     <!-- ShowerMax detector plane -->
     <physvol name="showerMaxVirtualPlane_phys">
       <volumeref ref="showerMaxVirtualPlane_log"/>

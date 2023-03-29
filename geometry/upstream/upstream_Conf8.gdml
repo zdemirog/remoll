@@ -113,12 +113,20 @@
       <!-- <materialref ref="Concrete"/> -->
       <solidref ref="coll1TopShielding_solid"/>
       <auxiliary auxtype="Color" auxvalue="Brown"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="6529"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 
     <volume name="coll1SideShield_logic">
       <materialref ref="Concrete"/>
       <solidref ref="coll1SideShielding_solid"/>
       <auxiliary auxtype="Color" auxvalue="green"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="6528"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 
     <volume name="pivotIron_logic">
@@ -132,6 +140,10 @@
       <materialref ref="Concrete"/>
       <solidref ref="DSbottomconcrete"/>
       <auxiliary auxtype="Color" auxvalue="Green"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="6530"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
     
@@ -139,6 +151,10 @@
       <materialref ref="barite"/>
       <solidref ref="DSbarite_sub"/>
       <auxiliary auxtype="Color" auxvalue="Brown"/>
+      <auxiliary auxtype="SensDet" auxvalue="ShieldDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="6531"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
       <auxiliary auxtype="Alpha" auxvalue="1.0"/>
     </volume>
 

@@ -1436,14 +1436,18 @@
       <auxiliary auxtype="Color" auxvalue="gray"/>
       <auxiliary auxtype="SensDet" auxvalue="Shielding_Block_Local_Lead"/>
       <auxiliary auxtype="DetNo" auxvalue="6033"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
-    
+
     <volume name="PbWall_2_logic">
       <materialref ref="Lead"/>
       <solidref ref="PbWall2_solid"/>
       <auxiliary auxtype="Color" auxvalue="gray"/>
       <auxiliary auxtype="SensDet" auxvalue="Shielding_Block_Local_Lead"/>
       <auxiliary auxtype="DetNo" auxvalue="6034"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
     
     <volume name="collar0_logic">
@@ -1459,18 +1463,30 @@
       <materialref ref="G4_Al"/>
       <solidref ref="flangeUScollar0_solid"/>
       <auxiliary auxtype="Color" auxvalue="blue"/>
+      <auxiliary auxtype="SensDet" auxvalue="PipeDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="6532"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>	
 	
     <volume name="beampipeUScollar0_log">
       <materialref ref="G4_Al"/>
       <solidref ref="beampipeUScollar0_solid"/>
       <auxiliary auxtype="Color" auxvalue="blue"/>
+      <auxiliary auxtype="SensDet" auxvalue="PipeDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="6533"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 
     <volume name="beampipeDScollar0_log">
       <materialref ref="G4_Al"/>
       <solidref ref="beampipeDScollar0_solid"/>
       <auxiliary auxtype="Color" auxvalue="blue"/>
+      <auxiliary auxtype="SensDet" auxvalue="PipeDet"/>
+      <auxiliary auxtype="DetNo" auxvalue="6534"/>
+      <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+      <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 
     <!--add bellows G4_STAINLESS-STEEL and custom bellows SS material  -->
@@ -1478,42 +1494,70 @@
         <materialref ref="SSbellows"/>
         <solidref ref="bellows2_solid"/>
         <auxiliary auxtype="Color" auxvalue="Pink"/>
+        <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+        <auxiliary auxtype="DetNo" auxvalue="6535"/>
+        <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+        <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>	
     
     <volume name="bellows2USflange_log">
         <materialref ref="G4_STAINLESS-STEEL"/>
         <solidref ref="bellows2USflange_solid"/>
         <auxiliary auxtype="Color" auxvalue="Orange"/>
+        <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+        <auxiliary auxtype="DetNo" auxvalue="6536"/>
+        <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+        <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 
     <volume name="bellows2DSflange_log">
         <materialref ref="G4_STAINLESS-STEEL"/>
         <solidref ref="bellows2DSflange_solid"/>
         <auxiliary auxtype="Color" auxvalue="Orange"/>
+        <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+        <auxiliary auxtype="DetNo" auxvalue="6537"/>
+        <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+        <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 	
     <volume name="bellows3physical_log">
         <materialref ref="SSbellows"/>
         <solidref ref="bellows3physical_solid"/>
         <auxiliary auxtype="Color" auxvalue="Pink"/>
+        <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+        <auxiliary auxtype="DetNo" auxvalue="6538"/>
+        <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+        <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
     
     <volume name="bellows3flangeUS_log">
         <materialref ref="G4_STAINLESS-STEEL"/>
         <solidref ref="bellows3flangeUS_solid"/>
         <auxiliary auxtype="Color" auxvalue="Orange"/>
+        <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+        <auxiliary auxtype="DetNo" auxvalue="6539"/>
+        <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+        <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
     
     <volume name="bellows3flangeDS_log">
         <materialref ref="G4_STAINLESS-STEEL"/>
         <solidref ref="bellows3flangeDS_solid"/>
         <auxiliary auxtype="Color" auxvalue="Orange"/>
+        <auxiliary auxtype="SensDet" auxvalue="bellowsDet"/>
+        <auxiliary auxtype="DetNo" auxvalue="6540"/>
+        <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+        <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 	
     <volume name="UpstreamEnclosurePipe_US_logic">
         <materialref ref="G4_Al"/>
         <solidref ref="UpstreamEnclosurePipe_US_solid"/>
         <auxiliary auxtype="Color" auxvalue="blue"/>
+        <auxiliary auxtype="SensDet" auxvalue="PipeDet"/>
+        <auxiliary auxtype="DetNo" auxvalue="6541"/>
+        <auxiliary auxtype="DetType" auxvalue="secondaries"/>
+        <auxiliary auxtype="DetType" auxvalue="lowenergyneutral"/>
     </volume>
 	
     <volume name="EnclosureFront_US_logic">
